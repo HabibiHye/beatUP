@@ -24,3 +24,6 @@ document.addEventListener('DOMContentLoaded', function() {
     // Additional controls like pause, next, previous can be setup in a similar manner
 });
 
+
+
+
