@@ -145,13 +145,14 @@ songs.forEach(element => {
     // console.log(poster);
     let card = document.createElement('a');
     card.classList.add('card');
-    card.href = "#" + id;
+    /*card.href = "#" + id;*/
     card.innerHTML = `
     <img src="${poster}" alt="">
                             <div class="content">
                                 ${songName}
                             </div>
     `;
+    card.onclick = function() { playSongFromSearch(id); };
     search_results.appendChild(card);
 });
 
@@ -180,6 +181,21 @@ input.addEventListener('keyup', ()=>{
         
     }
 })
+
+
+function playSongFromSearch(songId) {
+    let song = songs.find(song => song.id === songId);
+    if(song) {
+        music.src = `audio/${song.id}.mp3`; // Assuming your audio files are named '1.mp3', '2.mp3', etc.
+        poster_master_play.src = song.poster;
+        title.innerHTML = song.songName.replace('<br>', ' - '); // You might need to handle HTML tags correctly here.
+        music.play();
+        masterPlay.classList.remove('bi-play-fill');
+        masterPlay.classList.add('bi-pause-fill');
+        // Add any additional logic needed when a song starts playing
+    }
+}
+
 // search data end 
 
 
