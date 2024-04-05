@@ -2,13 +2,13 @@
 
 ## Overview
 
-BeatUp is a sleek and user-friendly web application that allows users to search for, play, and enjoy a curated selection of music tracks.
+Beats is a sleek and user-friendly web application that allows users to search for, play, and enjoy a curated selection of music tracks.
 
 ## Features
 
-- **Search Functionality**: Quickly find your favorite tracks with our responsive search feature.
-- **Playlist Creation**: Compile and save your personal playlists for easy access.
-- **Responsive Design**: Enjoy a consistent experience across all your devices.
+- Search Functionality: Quickly find your favorite tracks with our responsive search feature.
+- Playlist Creation:save your personal playlists for easy access.
+- Responsive Design: Enjoy a consistent experience across all your devices.
 
 ## Tech Stack
 
