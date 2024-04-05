@@ -1,4 +1,4 @@
-# BeatUp Music Web App
+# Beats Music Web App
 
 ## Overview
 
