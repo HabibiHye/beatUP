@@ -35,7 +35,7 @@ const songs = [{
     },
     {
         id: "7",
-        songName: `Young And Beautiful <br><div class="subtitle">Lana Del Rey</div>`,
+        songName: `We Can't Be Friends <br><div class="subtitle">Ariana Grande</div>`,
         poster: "img/7.jpg",
     },
     {
@@ -127,6 +127,11 @@ const songs = [{
         id: "25",
         songName: `Nupur <br><div class="subtitle">Topu</div>`,
         poster: "img/25.jpg",
+    },
+    {
+        id: "26",
+        songName: `Young And beautiful <br><div class="subtitle">Lana Del Rey</div>`,
+        poster: "img/",
     }
 ]
 

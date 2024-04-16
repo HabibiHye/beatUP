@@ -1,13 +1,15 @@
-/* Google Font "poppins" */
+/* Importing the "Poppins" font from Google Fonts for use throughout the application */
 
 @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
+/* General styling to remove default margins and paddings, and setting box-sizing to border-box for all elements */
 * {
     padding: 0;
     margin: 0;
     box-sizing: border-box;
 }
 
+/* Body styling sets the font, width, height, background color, and centers content using grid */
 body {
     font-family: 'Poppins', sans-serif;
     width: 100%;
@@ -17,6 +19,7 @@ body {
     place-items: center;
 }
 
+/* Header styling, sets its position, size, display type, and overflow handling */
 header {
     position: relative;
     width: 85%;
@@ -27,6 +30,9 @@ header {
     overflow: hidden;
 }
 
+
+/* menu side is the left list of songs*/
+/* songs side is the right side of songs+ popular artist*/
 header .menu_side,
 .song_side {
     width: 25%;
@@ -435,9 +441,10 @@ header .song_side::before {
     position: absolute;
     width: 100%;
     height: 300px;
-    background: url('bg.png');
+    background:url(bg);
     z-index: -1;
 }
+
 
 header .song_side nav {
     width: 90%;
@@ -1234,7 +1241,7 @@ header .master_play .vol .dot {
 
 header .master_play .vol .dot::before {
     content: '';
-    position: absolute;
+   / position: absolute;
     width: 15px;
     height: 15px;
     border: 1px solid #ec36e9;
