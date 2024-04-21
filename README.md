@@ -1,8 +1,8 @@
-# Beats Music Web App
+# beatUP Music Web App
 
 ## Overview
 
-Beats is a sleek and user-friendly web application that allows users to search for, play, and enjoy a curated selection of music tracks.
+beatUP is a sleek and user-friendly web application that allows users to search for, play, and enjoy a curated selection of music tracks.
 
 ## Features
 
