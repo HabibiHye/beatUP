@@ -1,6 +1,10 @@
+/*Initialization of Audio and SongLists*/
+
 const music = new Audio('audio/1.mp3');
 // music.play();
 
+
+/*Song array contains objects with id, songName, and poster for each song*/
 const songs = [{
         id: '1',
         songName: ` Thank U,Next <br>
@@ -135,14 +139,15 @@ const songs = [{
     }
 ]
 
-
+/*Using the array of songs to dynamically populate song items on the webpage with respective images and names */
 Array.from(document.getElementsByClassName('songItem')).forEach((e, i) => {
     e.getElementsByTagName('img')[0].src = songs[i].poster;
     e.getElementsByTagName('h5')[0].innerHTML = songs[i].songName;
-
 });
 
 // search data start 
+/*Handles the creation of search result cards dynamically based on the songs array*/
+
 let search_results = document.getElementsByClassName('search_results')[0];
 
 songs.forEach(element => {
@@ -187,22 +192,22 @@ input.addEventListener('keyup', ()=>{
     }
 })
 
-
+/*Adds functionality to filter search results based on user input*/
 function playSongFromSearch(songId) {
     let song = songs.find(song => song.id === songId);
     if(song) {
-        music.src = `audio/${song.id}.mp3`; // Assuming your audio files are named '1.mp3', '2.mp3', etc.
+        music.src = `audio/${song.id}.mp3`; // Assuming audio files are named '1.mp3', '2.mp3', etc.
         poster_master_play.src = song.poster;
         title.innerHTML = song.songName.replace('<br>', ' - '); // You might need to handle HTML tags correctly here.
         music.play();
         masterPlay.classList.remove('bi-play-fill');
         masterPlay.classList.add('bi-pause-fill');
-        // Add any additional logic needed when a song starts playing
     }
 }
-
 // search data end 
 
+/*Controls playing and pausing the current song*/
+/*also changes icons and animations based on the play status */
 
 let masterPlay = document.getElementById('masterPlay');
 let wave = document.getElementById('wave');
