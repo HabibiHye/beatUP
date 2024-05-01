@@ -1,4 +1,6 @@
 /*css file for responsiveness of beatUP*/
+/*adjactment of the page according to different screen sizes*/
+
 @media screen and (max-width: 1200px) {
     header {
         width: 95%;

@@ -1,11 +1,13 @@
-/*Initialization of Audio and SongLists*/
+/*Initialization of the music player with the audio file.*/
 
 const music = new Audio('audio/1.mp3');
 // music.play();
 
 
-/*Song array contains objects with id, songName, and poster for each song*/
-const songs = [{
+/* Array of objects representing songs, each with an ID, song name, and associated image.*/
+const songs = [
+    /*Each object in the array represents a song with details like id, song name, and image path.*/ 
+    {
         id: '1',
         songName: ` Thank U,Next <br>
     <div class="subtitle">Ariana Grande</div>`,
@@ -166,7 +168,7 @@ songs.forEach(element => {
     search_results.appendChild(card);
 });
 
-
+/*Add functionality to filter search results based on user input.*/ */
 let input = document.getElementsByTagName('input')[0];
 
 input.addEventListener('keyup', ()=>{
@@ -183,6 +185,7 @@ input.addEventListener('keyup', ()=>{
             items[index].style.display = "none";
         }
 
+        /*Hide search results container when input is cleared.*/
         if (input.value == 0) {
             search_results.style.display = "none";
         } else {
@@ -192,7 +195,7 @@ input.addEventListener('keyup', ()=>{
     }
 })
 
-/*Adds functionality to filter search results based on user input*/
+/*Function to play a selected song from the search results.*/
 function playSongFromSearch(songId) {
     let song = songs.find(song => song.id === songId);
     if(song) {
@@ -278,6 +281,7 @@ let seek = document.getElementById('seek');
 let bar2 = document.getElementById('bar2');
 let dot = document.getElementsByClassName('dot')[0];
 
+/*Event listener to update the progress bar and time as the song plays. */
 music.addEventListener('timeupdate', () => {
     let music_curr = music.currentTime;
     let music_dur = music.duration;
@@ -285,7 +289,8 @@ music.addEventListener('timeupdate', () => {
     let min1 = Math.floor(music_dur / 60);
     let sec1 = Math.floor(music_dur % 60);
 
-    // console.log(min1);
+    //console.log(min1);
+    /*Update current play times*/
     if (sec1 < 10) {
         sec1 = `0${sec1}`;
     }
@@ -311,6 +316,7 @@ seek.addEventListener('change', () => {
     music.currentTime = seek.value * music.duration / 100;
 });
 
+/*Handle changes to the song's volume. */
 let vol_icon = document.getElementById('vol_icon');
 let vol = document.getElementById('vol');
 let vol_bar = document.getElementsByClassName('vol_bar')[0];
@@ -338,13 +344,14 @@ vol.addEventListener('change', () => {
     music.volume = vol_a / 100;
 });
 
-
+/*Navigation controls for the music player: back and next song functionality. */
 let back = document.getElementById('back');
 let next = document.getElementById('next');
 
+/*Listener for the back button to play the previous song. */
 back.addEventListener('click', () => {
     index -= 1;
-    if (index < 1) {
+    if (index < 1) {  /*If the index is less than 1, loop back to the last song. */
         index = Array.from(document.getElementsByClassName('songItem')).length;
     }
     music.src = `audio/${index}.mp3`;
@@ -370,6 +377,7 @@ back.addEventListener('click', () => {
     wave.classList.add('active1');
 })
 
+/* Listener for the next button to play the next song. */
 next.addEventListener('click', () => {
     index++;
     if (index > Array.from(document.getElementsByClassName('songItem')).length) {
@@ -399,34 +407,38 @@ next.addEventListener('click', () => {
 });
 
 
-
-
+/*Event listeners for playlist scrolling controls. */
 
 let pop_song_left = document.getElementById('pop_song_left');
 let pop_song_right = document.getElementById('pop_song_right');
 let pop_song = document.getElementsByClassName('pop_song')[0];
 
-
+/*Scroll the playlist to the right. */
 pop_song_right.addEventListener('click', () => {
     pop_song.scrollLeft += 330;
 });
+
+/*Scroll the playlist to the left. */
 pop_song_left.addEventListener('click', () => {
     pop_song.scrollLeft -= 330;
 });
 
+/*Event listeners for artist list scrolling. */
 let pop_art_left = document.getElementById('pop_art_left');
 let pop_art_right = document.getElementById('pop_art_right');
 let Artists_bx = document.getElementsByClassName('Artists_bx')[0];
 
-
+/*Scroll the artist list to the right */
 pop_art_right.addEventListener('click', () => {
     Artists_bx.scrollLeft += 330;
 });
+
+/*Scroll the artist list to the left. */
 pop_art_left.addEventListener('click', () => {
     Artists_bx.scrollLeft -= 330;
 });
 
-
+/*Toggle shuffle, repeat, or standard play through the shuffle button. */
 let shuffle = document.getElementsByClassName('shuffle')[0];
 
 shuffle.addEventListener('click', ()=>{
@@ -456,7 +468,7 @@ shuffle.addEventListener('click', ()=>{
 });
 
 
-
+/*Function to play the next song, adjusting playback and visual indicators. */
 const next_music = () => {
     if (index == songs.length) {
         index = 1
@@ -486,6 +498,8 @@ const next_music = () => {
     el.target.classList.add('bi-pause-circle-fill');
     wave.classList.add('active1');
 }
+
+/*Function to repeat the current song. */
 const repeat_music = () => {
     index;
     music.src = `audio/${index}.mp3`;
@@ -512,6 +526,7 @@ const repeat_music = () => {
     wave.classList.add('active1');
 }
 
+/*Function to play a random song from the playlist. */
 const random_music = () => {
     if (index == songs.length) {
         index = 1
@@ -543,7 +558,7 @@ const random_music = () => {
 }
 
 
-
+/*Listener for when the song ends to decide the next action based on shuffle mode. */
 music.addEventListener('ended', ()=>{
     let b = shuffle.innerHTML;
 
