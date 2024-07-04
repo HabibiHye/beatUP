@@ -4,6 +4,7 @@
 
 beatUP is a dynamic web-based music player that allows users to listen to, search, and manage a curated list of songs. This project provides a user-friendly interface for interactive music playback, featuring playlist management, volume control, and responsive design for various devices.
 
+
 ## Features
 
 - Search Functionality: Quickly find your favorite tracks with our responsive search feature.
@@ -12,6 +13,8 @@ beatUP is a dynamic web-based music player that allows users to listen to, searc
 - Dynamic: search feature to filter songs by name or artist.
 - Volume : control with visual feedback.
 - Navigation : controls to browse through songs and playlists.
+
+  
 ## Tech Stack
 
 - HTML
